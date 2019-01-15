@@ -558,7 +558,7 @@ IF @prefix != ''
 BEGIN
        SET @prefix = @prefix + '_'
 END
-
+ 
 SELECT @sql += 'DROP TABLE ' + QUOTENAME([TABLE_SCHEMA]) + '.' + QUOTENAME([TABLE_NAME]) + ';'
 FROM [INFORMATION_SCHEMA].[TABLES]
 WHERE [TABLE_TYPE] = 'BASE TABLE' AND [TABLE_NAME] like @prefix + @entityName  AND [TABLE_SCHEMA]= @schema;
